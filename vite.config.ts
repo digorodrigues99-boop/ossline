@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // GitHub Pages serves the app from /<repo-name>/, not the domain root.
-  base: process.env.GITHUB_PAGES ? '/turbo-disco/' : '/',
+  base: process.env.GITHUB_PAGES ? '/ossline/' : '/',
 })
