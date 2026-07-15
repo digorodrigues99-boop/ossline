@@ -130,6 +130,14 @@ body {
   box-shadow: inset 0 0 0 1px var(--border);
 }
 
+/* five tabs need to squeeze on small phones */
+@media (max-width: 460px) {
+  .tab {
+    font-size: 0.72rem;
+    padding: 0.5rem 0.2rem;
+  }
+}
+
 /* ---------- panels & layout ---------- */
 
 .panel {
@@ -720,6 +728,291 @@ textarea {
 .belt-dot.belt-purple { background: var(--belt-purple); }
 .belt-dot.belt-brown { background: var(--belt-brown); }
 .belt-dot.belt-black { background: var(--belt-black); }
+
+/* ---------- build lab ---------- */
+
+.points-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.points-of {
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.points-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.settings-note {
+  margin-bottom: 0.75rem;
+}
+
+.error-text {
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin: 0.5rem 0 0;
+}
+
+.panel-error {
+  margin: -0.5rem 0 1rem;
+}
+
+.tree-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.tree-total {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.skill-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.skill-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.skill-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.skill-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.skill-blurb {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.skill-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-shrink: 0;
+}
+
+.pip-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-primary);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.pip-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.pip-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.pips {
+  display: flex;
+  gap: 3px;
+}
+
+.pip {
+  width: 9px;
+  height: 16px;
+  border-radius: 3px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.pip.filled {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.archetype-card {
+  background: linear-gradient(160deg, var(--surface-2), var(--surface-1) 55%);
+  border: 1px solid var(--accent);
+  border-radius: 16px;
+  padding: 1.2rem 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.archetype-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.archetype-name {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.archetype-epithet {
+  margin: 0.1rem 0 0.6rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.badge-ai {
+  background: linear-gradient(135deg, #6b46a8, var(--accent));
+  border-color: transparent;
+  color: #fff;
+}
+
+.class-chip {
+  background: var(--surface-2);
+  border-color: var(--accent);
+  color: var(--text-primary);
+  text-transform: none;
+}
+
+.archetype-desc {
+  margin: 0.8rem 0;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.archetype-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0.9rem 0;
+}
+
+.astat {
+  display: grid;
+  grid-template-columns: 84px 1fr 30px;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.astat-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.astat-value {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.archetype-lists ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.archetype-lists li {
+  margin-bottom: 0.25rem;
+}
+
+.list-title {
+  margin: 0.9rem 0 0.4rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.strengths-title {
+  color: var(--accent-2);
+}
+
+.weaknesses-title {
+  color: var(--danger);
+}
+
+.archetype-playstyle {
+  margin: 0.9rem 0 0;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.save-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.save-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.build-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.build-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.build-list li:last-child {
+  border-bottom: none;
+}
+
+.build-list-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.build-list .card-actions {
+  margin-top: 0;
+}
+
+@media (max-width: 520px) {
+  .skill-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+  }
+
+  .skill-controls {
+    justify-content: flex-end;
+  }
+}
 
 /* ---------- footer ---------- */
 

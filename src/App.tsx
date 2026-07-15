@@ -6,12 +6,14 @@ import Dashboard from './components/Dashboard';
 import Sessions from './components/Sessions';
 import Journal from './components/Journal';
 import ProfileView from './components/ProfileView';
+import BuildLab from './components/BuildLab';
 
-type Tab = 'dashboard' | 'train' | 'journal' | 'profile';
+type Tab = 'dashboard' | 'train' | 'build' | 'journal' | 'profile';
 
 const TABS: { id: Tab; label: string; icon: string }[] = [
   { id: 'dashboard', label: 'Dashboard', icon: '📊' },
   { id: 'train', label: 'Train', icon: '🥋' },
+  { id: 'build', label: 'Build', icon: '🧬' },
   { id: 'journal', label: 'Journal', icon: '📓' },
   { id: 'profile', label: 'Profile', icon: '🎖️' },
 ];
@@ -57,6 +59,7 @@ export default function App() {
       <main className="content">
         {tab === 'dashboard' && <Dashboard sessions={sessions} profile={profile} />}
         {tab === 'train' && <Sessions sessions={sessions} onChange={setSessions} />}
+        {tab === 'build' && <BuildLab />}
         {tab === 'journal' && <Journal entries={entries} onChange={setEntries} />}
         {tab === 'profile' && <ProfileView profile={profile} onChange={setProfile} />}
       </main>
